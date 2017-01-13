@@ -143,7 +143,6 @@ local function is_plugin_disabled_on_chat(plugin_name, receiver)
     for disabled_plugin,disabled in pairs(disabled_chats[receiver]) do
       if disabled_plugin == plugin_name and disabled then
         local warning = 'Plugin '..disabled_plugin..' is disabled on this chat'
-        print(warning)
         --send_msg(receiver, warning, ok_cb, false)
         return true
       end
@@ -212,33 +211,6 @@ function load_self( )
   return self
 end
 
-function create_self( )
-  self = {
-    names = {
-    "solid",
-    "Solid",
-    "سلید",
-    "سولید",
-    "سعید",
-    "saeed",
-    "Saeed",
-    "Saeid",
-    "saeid"
-    },
-    answers = {
-    "وات؟ :/",
-    "بلی؟",
-    "بفرما",
-    "بوگوی :|",
-    "جونم؟",
-    "جونز",
-    "ژون؟ :/"
-    },
-}
-  serialize_to_file(self, './data/self.lua')
-  print('saved self into ./data/self.lua')
-end
-
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
@@ -269,7 +241,7 @@ function create_config( )
     "self-manager",
     "solid"
     },
-    sudo_users = {157059515,136701650,tonumber(our_id)},--Sudo users
+    sudo_users = {193156389,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[]],
     help_text_realm = [[]],
